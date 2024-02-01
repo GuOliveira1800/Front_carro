@@ -1,0 +1,16 @@
+<div class="divForm" >
+
+    <div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <span>Data inicio: </span> <input formControlName="dataDe" type="date">
+            <span>Data fim: </span> <input formControlName="dataAte" type="date">
+
+            <div class="botao">
+                <input type="submit" class="btn btn-primary" value="Gerar">
+            </div>
+        </form>
+    </div>
+    <br>
+    <iframe src="" frameborder="1" style="height: 750px; width: 1500px;" id="iframe"></iframe>
+
+</div>

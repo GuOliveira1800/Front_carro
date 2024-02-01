@@ -1,0 +1,51 @@
+<div class="divForm" >
+
+    <div style="text-align: center;">
+        <h1>Cadastro de Carro</h1>
+    </div>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <input type="hidden" name="codigo_car" id="codigo_car" formControlName="codigo_car" >
+        <div class="form-floating mb-3">
+            <input type="text" name ="modelo" class="form-control" id="modelo_car" formControlName="modelo_car" placeholder="modelo">
+            <label for="floatingInput">Modelo</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name ="marca" class="form-control" id="marca" formControlName="marca_car" placeholder="modelo">
+            <label for="marca">Marca</label>
+        </div>
+        <div class="form-floating mb-3">
+            <select formControlName="status_car" name ="status" class="form-control" style="margin-bottom: 15px; height: 60px;">                
+                <option value="1">Disponivel</option>
+                <option value="2">Em uso</option>
+                <option value="3">Manutenção</option>
+            </select>       
+            <label for="floatingInput">Status</label>     
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" name ="ano" class="form-control" id="floatingInput" formControlName="ano_car" placeholder="ano" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <label for="floatingInput">Ano</label>
+        </div>
+                
+        <div class="form-floating mb-3">
+            <select formControlName="categoria_car" name ="categoria" class="form-control" style="margin-bottom: 15px; height: 60px;">                
+                <option value="1">Sedan</option>
+                <option value="2">Suv</option>
+                <option value="3">Picape</option>
+                <option value="4">Esportivo</option>
+                <option value="4">Hatch</option>
+            </select>       
+            <label for="floatingInput">Categoria</label>     
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="number" name ="preco" precision="2" class="form-control" id="floatingInput" formControlName="preco_car">
+            <label for="floatingInput">Preco</label>            
+        </div>
+        
+        <div style="text-align: center;">
+            <input type="submit" class="btn btn-primary btn-lg" value="Salvar">
+        </div>
+
+    </form>
+</div>

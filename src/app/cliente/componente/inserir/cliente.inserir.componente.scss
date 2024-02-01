@@ -1,0 +1,16 @@
+.divForm{
+    padding: 5px;
+    width: 500px;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}

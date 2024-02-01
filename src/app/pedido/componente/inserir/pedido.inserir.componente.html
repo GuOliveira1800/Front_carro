@@ -1,0 +1,52 @@
+<div class="divForm" >
+
+    <div style="text-align: center;">
+        <h1>Cadastro de Pedido</h1>
+    </div>
+
+    <div class="form-floating mb-3" style="display: flex;">
+        <input type="text" class="form-control" style="width: 435px; margin-right: 5px;" readonly id="modeloCarro" #modeloCarro>
+        <Button (click)="pesquisa()" class="btn btn-dark" style="height: 38px; margin-top: 10px;"><mat-icon>search</mat-icon></Button>
+    </div>
+
+    <div class="form-floating mb-3" style="display: flex;">
+        <input type="text" class="form-control" style="width: 435px; margin-right: 5px;" readonly id="nomeCliente" #nomeCliente>
+        <Button (click)="pesquisaCliente()" class="btn btn-dark" style="height: 38px; margin-top: 10px;"><mat-icon>search</mat-icon></Button>
+    </div>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <input type="hidden" name="codigo_ped" id="codigo_ped" formControlName="codigo_ped" >
+
+        <div class="form-floating mb-3">
+            <input type="text" name ="nome" class="form-control" id="datcon_ped" formControlName="datcon_ped" mask="00/00/0000" placeholder="Data" required>
+            <label for="floatingInput">Data de Contratação</label>
+        </div>
+        
+        <div class="form-floating mb-3">
+            <input type="text" name ="nome" class="form-control" id="datdev_ped" formControlName="datdev_ped" mask="00/00/0000" placeholder="Data" required>
+            <label for="floatingInput">Data de Devolução</label>
+        </div>
+
+        <div>
+            <select id="status_ped" formControlName="status_ped" name="status_ped" class="status">
+                <option value="1">Aberto</option>
+                <option value="2">Em Andamento</option>
+                <option value="3">Cancelado</option>
+            </select>
+        </div>
+
+        <div style="text-align: center;">
+            <input type="submit" class="btn btn-primary btn-lg" value="Salvar">
+        </div>
+
+    </form>
+
+    <div *ngIf="this.listaErro.length > 0" >
+        <table>
+            <tr *ngFor="let item of this.listaErro" style="text-align: center;">
+                <td>{{item}}</td>
+            </tr>
+        </table>        
+    </div>
+
+</div>

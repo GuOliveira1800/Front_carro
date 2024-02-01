@@ -1,0 +1,51 @@
+<div class="divForm" >
+
+    <div style="text-align: center;">
+        <h1>Cadastro de Carro</h1>
+    </div>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <input type="hidden" name="codigo_cli" id="codigo_cli" formControlName="codigo_cli" >
+
+        <input type="hidden" name="codend_cli" id="codend_cli" formControlName="codend_cli" >
+        
+        <div class="form-floating mb-3">
+            <input type="text" name ="nome" class="form-control" id="nome_cli" formControlName="nome_cli" placeholder="nome">
+            <label for="floatingInput">Nome</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" name ="docume" class="form-control" id="docume_cli" formControlName="docume_cli" mask="000.000.000-00" placeholder="CPF">
+            <label for="floatingInput">Cpf</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" name ="telefo" class="form-control" id="telefo_cli" formControlName="telefo_cli" mask="(00) 00000-0000" placeholder="telefo">
+            <label for="floatingInput">Telefone</label>
+        </div>
+
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="form-floating mb-3">
+                <input type="text" name ="cep" class="form-control" id="cep_end" formControlName="cep_end" mask="00000-000" placeholder="cep">
+                <label for="floatingInput">Cep</label>
+            </div>
+    
+            <div class="form-floating mb-3">
+                <input type="text" name ="numero" class="form-control" id="numero_end" formControlName="numero_end" placeholder="numero">
+                <label for="floatingInput">Numero</label>
+            </div>
+        </form>
+
+        <div>
+            <input class="form-check-input" type="checkbox" name ="verifi_cli" id="verifi_cli" formControlName="verifi_cli"> 
+            <label class="form-check-label" for="flexCheckDefault" style="margin-bottom: 15px; margin-left: 10px; font-size: 16px;">
+                Verificado
+            </label>
+        </div>
+
+        <div style="text-align: center;">
+            <input type="submit" class="btn btn-primary btn-lg" value="Salvar">
+        </div>
+
+    </form>
+</div>
